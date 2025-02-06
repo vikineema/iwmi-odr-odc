@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iwmi-odr-odc-product-py"
+version = "0.0.1"
+requires-python = ">= 3.9"
+dependencies= [
+    "aiobotocore[boto3,awscli]",
+    "click",
+    "eodatasets3",
+    "fsspec[full]",
+    "geopandas",
+    "odc-cloud[ASYNC]",
+    "pyyaml",
+    "rasterio",
+    
+]
+
+[project.optional-dependencies]
+lint = [
+    "black[jupyter]",
+    "flake8",
+    "isort>=5.0.0",
+    "pre-commit",
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 100

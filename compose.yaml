@@ -6,7 +6,7 @@ services:
       - POSTGRES_PASSWORD=opendatacubepassword
       - POSTGRES_USER=opendatacube
     ports:
-      - 5435:5432
+      - 5433:5432
     restart: always
 
   jupyter:
@@ -16,6 +16,7 @@ services:
       - DB_DATABASE=opendatacube
       - DB_PASSWORD=opendatacubepassword
       - DB_USERNAME=opendatacube
+      - DB_PORT=5432
       - AWS_NO_SIGN_REQUEST=true
       - AWS_S3_ENDPOINT=s3.af-south-1.amazonaws.com
       - CIABPASSWORD=${CIABPASSWORD:-secretpassword}
@@ -54,6 +55,6 @@ services:
     links:
       - postgres:postgres
     ports:
-      - 8080:8080
+      - 8080:8081
     depends_on:
       - postgres

@@ -26,8 +26,15 @@ lint = [
     "pre-commit",
 ]
 
+[project.scripts]
+create-stac-files = "iwmi_odr_odc_product_py.stac:create_stac_files"
+get-storage-parameters = "iwmi_odr_odc_product_py.storage_parameters:get_storage_parameters"
+
 [tool.isort]
 profile = "black"
 
 [tool.black]
 line-length = 100
+extend-exclude = '''
+src/iwmi_odr_odc_product_py/eo3assemble/easi_prepare_template\.py
+'''

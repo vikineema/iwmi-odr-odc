@@ -3,6 +3,7 @@
 # https://realpython.com/pytest-python-testing/
 
 import pytest
+
 from iwmi_odr_odc_product_py.eo3assemble.easi_assemble import OUTPUT_NAME, EasiPrepare
 
 # Uncomment when required

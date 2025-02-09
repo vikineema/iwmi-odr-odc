@@ -26,7 +26,7 @@ logger = get_logger(Path(__file__).stem, level=logging.INFO)
 # Python terminal
 # >>> import uuid
 # >>> uuid.uuid4()
-UUID_NAMESPACE = uuid.UUID("ff562bab-ea6f-409b-bac0-b725449cb036")
+UUID_NAMESPACE = uuid.UUID("413ed7e6-75c7-4da9-92dc-1a0205c7be53")
 
 
 def prepare_dataset(

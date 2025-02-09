@@ -13,16 +13,16 @@
 # 3. Call p.write_eo3() to validate and write the dataset YAML document
 
 
-import logging
 import re
 import uuid
 import warnings
 from pathlib import Path
-
 import click
+import logging
+
 from eodatasets3.images import ValidDataMethod
-from iwmi_odr_odc_product_py.common import get_logger
-from iwmi_odr_odc_product_py.eo3assemble.easi_assemble import EasiPrepare
+from tasks.eo3assemble.easi_assemble import EasiPrepare
+from tasks.common import get_logger
 
 logger = get_logger(Path(__file__).stem, level=logging.INFO)
 

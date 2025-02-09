@@ -8,7 +8,10 @@ from eodatasets3.serialise import to_path
 from eodatasets3.stac import to_stac_item
 from odc.aws import s3_dump
 
-from iwmi_odr_odc_product_py import prepare_iwmi_blue_et_monthly_metadata
+from iwmi_odr_odc_product_py import (
+    prepare_iwmi_blue_et_monthly_metadata,
+    prepare_iwmi_green_et_monthly_metadata,
+)
 from iwmi_odr_odc_product_py.common import get_logger
 from iwmi_odr_odc_product_py.io import find_geotiff_files, is_s3_path
 
@@ -96,6 +99,10 @@ def create_stac_files(
 
         if product_name == "iwmi_blue_et_monthly":
             dataset_doc = prepare_iwmi_blue_et_monthly_metadata.prepare_dataset(
+                dataset_path=dataset_path, product_yaml=product_yaml, output_path=output_path
+            )
+        elif product_name == "iwmi_green_et_monthly":
+            dataset_doc = prepare_iwmi_green_et_monthly_metadata.prepare_dataset(
                 dataset_path=dataset_path, product_yaml=product_yaml, output_path=output_path
             )
 
